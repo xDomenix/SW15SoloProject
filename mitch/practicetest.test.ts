@@ -1,4 +1,5 @@
 import { Practice } from "./PracticePage";
+
 const practiceInstance = new Practice();
 
 test('firstTest', async () => {
@@ -37,4 +38,35 @@ test('secondTest', async () => {
     await practiceInstance.driver.navigate().back();
     await practiceInstance.click(practiceInstance.findStore);
     await practiceInstance.driver.navigate().back();
+});
+
+test('thirdTest', async () => {
+    await practiceInstance.navigate();
+    await practiceInstance.click(practiceInstance.DateofServ); // Corrected the name to match the property defined in Practice class
+    await practiceInstance.click(practiceInstance.calendar);
+    await practiceInstance.click(practiceInstance.inorEst);
+    await practiceInstance.click(practiceInstance.comments);
+    await practiceInstance.click(practiceInstance.checkBox);
+    await practiceInstance.click(practiceInstance.robot);
+    await practiceInstance.click(practiceInstance.captcha);
+    await practiceInstance.driver.quit(); // Ensure driver quits at the end
+});
+
+test('fourthTest', async () => {
+    await practiceInstance.navigate();
+    await practiceInstance.click(practiceInstance.DateofServ); // Corrected the name to match the property defined in Practice class
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.calendar);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.inorEst);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.comments);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.checkBox);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.robot);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.click(practiceInstance.captcha);
+    await practiceInstance.driver.navigate().back();
+    await practiceInstance.driver.quit(); // Ensure driver quits at the end
 });
